@@ -1,0 +1,308 @@
+/* =========================================================
+   PALETA DE COLORES CLÁSICA GUNDAM (RX-78-2)
+   - Azul Federación: #0b3d91 / #051d47
+   - Rojo Carmesí (V-Fin / Escudo): #d32f2f
+   - Amarillo Dorado (Antena / Detalles): #fbc02d
+   - Blanco Mecánico: #ffffff / #f0f4f8
+   - Gris Acero Oscuro (Hangar): #121824
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    /* Fondo oscuro estilo hangar espacial con cuadrícula técnica sutil */
+    background-color: #121824;
+    background-image: 
+        linear-gradient(rgba(18, 24, 36, 0.92), rgba(18, 24, 36, 0.95)),
+        url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600');
+    background-attachment: fixed;
+    background-size: cover;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* ENCABEZADO CON IMAGEN DE FONDO Y BORDES TRICOLOR */
+header {
+    background: 
+        linear-gradient(135deg, rgba(5, 29, 71, 0.92), rgba(11, 61, 145, 0.85)),
+        url('https://images.unsplash.com/photo-1618336753974-aae8e04506aa?w=1600');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    text-align: center;
+    padding: 55px 20px;
+    border-bottom: 5px solid #fbc02d; /* Línea amarilla tipo V-Fin */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 0px #d32f2f; /* Sombra roja Gundam */
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 1.15rem;
+    color: #fbc02d;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* MENÚ DE NAVEGACIÓN TIPO CABINA DE MOBILE SUIT */
+nav {
+    background-color: #071326;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 3px solid #d32f2f; /* Borde rojo */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 16px 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav a:hover,
+nav a.activo {
+    background-color: #d32f2f; /* Rojo activo */
+    color: #ffffff;
+    box-shadow: inset 0 -4px 0 #fbc02d; /* Detalle amarillo inferior */
+}
+
+/* CONTENEDOR PRINCIPAL */
+main {
+    max-width: 1140px;
+    margin: 25px auto;
+    padding: 0 20px;
+}
+
+/* TRANSICIÓN DE PÁGINAS */
+.pagina {
+    display: none;
+    animation: aparecer 0.35s ease-out;
+}
+
+.pagina.activa {
+    display: block;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* SECCIONES BLANCAS ESTILO BLINDAJE DE GUNDAM */
+section {
+    background: #ffffff;
+    margin-bottom: 30px;
+    padding: 35px;
+    border-radius: 6px;
+    border-left: 6px solid #0b3d91; /* Franja lateral azul */
+    border-top: 2px solid #e1e8ed;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+h2 {
+    color: #0b3d91;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #d32f2f; /* Subrayado rojo */
+    padding-bottom: 6px;
+    display: inline-block;
+}
+
+/* SECCIÓN DE BIENVENIDA */
+.bienvenida {
+    text-align: center;
+    border-left: none;
+    border-top: 6px solid #0b3d91;
+}
+
+.bienvenida p {
+    max-width: 780px;
+    margin: 0 auto 25px auto;
+    font-size: 1.12rem;
+    color: #333;
+}
+
+.bienvenida img {
+    width: 100%;
+    max-height: 440px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 3px solid #0b3d91;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* BOTÓN DE ACCIÓN ROJO Y AMARILLO */
+.boton {
+    display: inline-block;
+    background-color: #d32f2f;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 4px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-top: 22px;
+    border-bottom: 4px solid #8e0000;
+    transition: all 0.25s ease;
+}
+
+.boton:hover {
+    background-color: #0b3d91;
+    border-bottom-color: #fbc02d;
+    transform: translateY(-2px);
+}
+
+/* TARJETAS DE CATÁLOGO */
+.contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 24px;
+    margin-top: 15px;
+}
+
+.tarjeta {
+    background-color: #f8fafc;
+    border: 2px solid #cbd5e1;
+    border-top: 5px solid #0b3d91;
+    border-radius: 6px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tarjeta:hover {
+    transform: translateY(-6px);
+    border-top-color: #d32f2f;
+    box-shadow: 0 12px 24px rgba(11, 61, 145, 0.25);
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.tarjeta h3 {
+    color: #0b3d91;
+    font-size: 1.25rem;
+    margin: 16px 12px 8px;
+}
+
+.tarjeta p {
+    padding: 0 16px 14px;
+    color: #475569;
+    font-size: 0.96rem;
+}
+
+/* ETIQUETA DE PRECIO ESTILO PLACA TÉCNICA */
+.tarjeta .precio {
+    background-color: #0b3d91;
+    color: #fbc02d;
+    font-weight: 800;
+    font-size: 1.2rem;
+    padding: 10px;
+    margin: 0;
+    letter-spacing: 1px;
+    border-top: 2px solid #fbc02d;
+}
+
+/* ESCALAS Y GRADOS */
+.paquetes h3 {
+    color: #d32f2f;
+    margin-top: 20px;
+    margin-bottom: 6px;
+    font-size: 1.2rem;
+    border-left: 4px solid #fbc02d;
+    padding-left: 10px;
+}
+
+/* BANNER DE PROMOCIONES CON FONDO DE CIRCUITO/MECHA */
+#promociones {
+    background: 
+        linear-gradient(135deg, rgba(11, 61, 145, 0.92), rgba(211, 47, 47, 0.88)),
+        url('https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=1200');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    text-align: center;
+    border-left: none;
+    border: 3px solid #fbc02d;
+}
+
+#promociones h2 {
+    color: #fbc02d;
+    border-bottom-color: #ffffff;
+}
+
+#promociones p {
+    font-size: 1.15rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+#promociones h3 {
+    margin-top: 18px;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.35);
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 4px;
+    border: 1px solid #fbc02d;
+}
+
+/* ENLACES DE CONTACTO */
+#contacto a {
+    color: #d32f2f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#contacto a:hover {
+    color: #0b3d91;
+    text-decoration: underline;
+}
+
+/* PIE DE PÁGINA */
+footer {
+    background-color: #071326;
+    color: #e2e8f0;
+    text-align: center;
+    padding: 35px 20px;
+    margin-top: 50px;
+    border-top: 5px solid #0b3d91;
+}
+
+footer p {
+    margin: 8px 0;
+}
